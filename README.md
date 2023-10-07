@@ -34,6 +34,7 @@ this function takes 1-letter coded protein sequence(s) (string) and calculates m
 `
 run_protein_tool('peptide', function='molecular_weight')
 `
+
 `
 799
 `
