@@ -95,12 +95,14 @@ def fastq_filter(seqs: dict, gc_bounds: int, length_bounds: int, quality_thresho
     Arguments: dict with fastq sequences, filtering parameters
     Returns filtered dictionary
     """
-    resulting_sequences = dict()
-    gc_filtered = gc_filter(seqs, gc_bounds = (0,100))
-    length_filtered = length_filter(seqs, length_bounds = (0,1000))
-    quality_filtered = quality_filter(seqs, quality_threshold = 15)
+    result = dict()
+    gc_filtered = gc_filter(seqs, gc_bounds)
+    length_filtered = length_filter(seqs, length_bounds)
+    quality_filtered = quality_filter(seqs, quality_threshold)
     intersection = gc_filtered.keys() & length_filtered.keys() & quality_filtered.keys()
-    #intersection = {keys: gc_filtered[keys] for keys in gc_filtered.keys() & length_filtered.keys()}
-    #for keys, (sequence, quality) in intersection:
-    #    resulting_sequences[keys] = (sequence, quality)
-    return intersection
+
+    for keys, (sequence, quality) in seqs.items():
+        if keys in intersection:
+            result[keys] = (sequence, quality)
+    return result
+
