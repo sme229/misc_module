@@ -30,8 +30,11 @@ molecular_weight
 
 ```
 this function takes 1-letter coded protein sequence(s) (string) and calculates molecular weight rounded to integer in g/mol. The function is not case-sensitive.
+
 `
 run_protein_tool('peptide', function='molecular_weight')
+`
+`
 799
 `
 
