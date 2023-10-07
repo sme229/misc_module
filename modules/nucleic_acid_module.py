@@ -23,52 +23,24 @@ def reverse(seq: str) -> str:
     return output
 
 
-def complement(seq: str) -> str:
-    """
-    Returns a complementary sequence
-    Argument is a string
-    Return is a string
-    """
-    list_input = list(seq)
-    for i in range(len(seq)):
-        if (list_input[i]=='G'):
-            list_input[i]='C'
-        elif (list_input[i]== 'g'):
-            list_input[i]='c'
-        elif (list_input[i]=='C'):
-            list_input[i]='G'
-        elif (list_input[i]=='c'):
-            list_input[i]='g'
-        elif (list_input[i] == 'T'):
-            list_input[i] = 'A'
-        elif (list_input[i] == 't'):
-            list_input[i]='a'
-        elif (list_input[i] == 'A'):
-            list_input[i] = 'T'
-        elif (list_input[i]=='a'):
-            list_input[i]='t'        
+COMPLEMENT_DNA = {
+    "a": "t", "A": "T",
+    "t": "a", "T": "A",
+    "g": "c", "G": "C",
+    "c": "g", "C": "G"}
 
+COMPLEMENT_RNA = {
+    "a": "u", "A": "U",
+    "u": "a", "U": "A",
+    "g": "c", "G": "C",
+    "c": "g", "C": "G"}
+
+def complement(seq):
+    if check_nucleic_acid(seq) == 'dna':
+        result = ''.join([COMPLEMENT_DNA[nucl] for nucl in seq])
     else:
-           
-            list_input = list(seq)
-            for i in range(len(seq)):
-                if (list_input[i]=='G'):
-                    list_input[i]='C'
-                elif (list_input[i]== 'g'):
-                    list_input[i]='c'  
-                elif (list_input[i]=='C'):
-                    list_input[i]='G'
-                elif (list_input[i]=='c'):
-                    list_input[i]='g'
-                elif (list_input[i] == 'U'):
-                    list_input[i] = 'A'
-                elif (list_input[i] == 'u'):
-                    list_input[i]='a'
-                elif (list_input[i] == 'A'):
-                    list_input[i] = 'U'
-                elif (list_input[i]=='a'):
-                    list_input[i]='u'  
-    return "".join(list_input)
+        result = ''.join([COMPLEMENT_RNA[nucl] for nucl in seq])
+    return result
 
 
 def check_nucleic_acid(seq: str) -> str:
