@@ -5,27 +5,28 @@ This module includes tools that can work with fastq, protein and nucleic acid se
 # fastq_filter #
 
    The function takes fastq sequences organised as a dictinary for input: {'seq_name': ('sequence', 'quality')}
-```   
+`  
 {'@SRX079804:1:SRR292678:1:1101:21885:21885': ('ACAGCAACATAAACATGATGGGATGGCGTAAGCCCCCGAGATATCAGTTTACCCAGGATAAGAGATTAAATTATGAGCAACATTATTAA', 'FGGGFGGGFGGGFGDFGCEBB@CCDFDDFFFFBFFGFGEFDFFFF;D@DD>C@DDGGGDFGDGG?GFGFEGFGGEF@FDGGGFGFBGGD'),
     '@SRX079804:1:SRR292678:1:1101:24563:24563': ('ATTAGCGAGGAGGAGTGCTGAGAAGATGTCGCCTACGCCGTTGAAATTCCCTTCAATCAGGGGGTACTGGAGGATACGAGTTTGTGTG', 'BFFFFFFFB@B@A<@D>BDDACDDDEBEDEFFFBFFFEFFDFFF=CC@DDFD8FFFFFFF8/+.2,@7<<:?B/:<><-><@.A*C>D')}
-```
+`
 
 This function filters fastq sequences by GC content, sequence length and quality score. These parameters can be specified in the function call:
 
-```
+`
 fastq_filter({'@SRX079804:1:SRR292678:1:1101:21885:21885': ('ACAGCAACATAAACATGATGGGATGGCGTAAGCCCCCGAGATATCAGTTTACCCAGGATAAGAGATTAAATTATGAGCAACATTATTAA', 'FGGGFGGGFGGGFGDFGCEBB@CCDFDDFFFFBFFGFGEFDFFFF;D@DD>C@DDGGGDFGDGG?GFGFEGFGGEF@FDGGGFGFBGGD')}, gc_bounds=(0,80), length_bounds=(100,200), quality_threshold=20)
-```
+`
 
 In this example, the GC content filter is set up as >= 0 and <= 80, the length filter filters out sequences that are outside of >= 100 and <= 200 length and the quality score cut off is set to >= 20. 
 A filtered dictionary with sequences that passed all 3 filters is returned. 
 
 # run_protein_tool #
+
 Includes a set of commands that perform various operations with protein or peptide sequences of any length. The input sequence(s) must be written 
 using _1-letter_ amino acid code and can contain any of the standard 20 amino acids.
 
 The following functions are implemented:
 ```
-**molecular_weight**
+molecular_weight
 
 ```
 this function takes 1-letter coded protein sequence(s) (string) and calculates molecular weight rounded to integer in g/mol. The function is not case-sensitive.
@@ -77,6 +78,7 @@ find_motifs('MADSEQNQEEAGGGEQREH', function='find_motifs', motif='GG')
 ```
 
 # run_dna_rna_tools #
+
 This function takes DNA or RNA sequences as input and includes the following operations:
 
 ```
