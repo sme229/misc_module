@@ -12,6 +12,8 @@ def calc_gc_content(seq: str) -> float:
             gc_count+=1
     gc_content = (gc_count/length_seq)*100
     return gc_content
+
+
 def seq_length(seq: str) -> str:
     """
     Calculates sequence length
@@ -19,6 +21,8 @@ def seq_length(seq: str) -> str:
     Returns string    
     """
     return len(seq)
+
+
 def quality_score(seq: str) -> int:
     """
     Calculates numeric quality score
@@ -32,6 +36,8 @@ def quality_score(seq: str) -> int:
         score_count+=score_num
     mean_qs = (score_count/length_q_seq)
     return mean_qs
+
+
 def length_filter(seqs: dict, length_bounds=(0,1000)) -> dict:
     """
     Filters fastq reads by length
@@ -51,6 +57,8 @@ def length_filter(seqs: dict, length_bounds=(0,1000)) -> dict:
                 result[name] = (sequence, quality)
             
     return result
+
+
 def quality_filter(seqs: dict, quality_threshold=25) -> dict:
     """
     Filters fastq reads by quality score
@@ -70,6 +78,8 @@ def quality_filter(seqs: dict, quality_threshold=25) -> dict:
                 result[name] = (sequence, quality)
             
     return result
+
+
 def gc_filter(seqs: dict, gc_bounds=(0,100)) -> dict:
     """
     Filters fastq reads by gc content
@@ -89,6 +99,8 @@ def gc_filter(seqs: dict, gc_bounds=(0,100)) -> dict:
                 result[name] = (sequence, quality)
             
     return result
+
+
 def fastq_filter(seqs: dict, gc_bounds: int, length_bounds: int, quality_threshold: int) -> dict:
     """
     Filters fastq sequence by gc content, length and quality score
