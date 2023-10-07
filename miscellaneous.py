@@ -1,3 +1,8 @@
+import modules.fastq_filter_functions.py
+import modules.nucleic_acid_module.py
+import modules.protein_module.py
+
+
 def fastq_filter(seqs: dict, gc_bounds: int, length_bounds: int, quality_threshold: int) -> dict:
     """
     Filters fastq sequence by gc content, length and quality score
