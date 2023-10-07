@@ -76,10 +76,8 @@ def molecular_weight(seq: str) -> int:
     """
     list_input_seq = list(seq)
     water_mw = 18
-    for aa in list_input_seq:
-        total_mw = sum(aa_weight_dict[a] for a in list_input_seq)
-        mw_water_removed = (total_mw - (water_mw * (len(list_input_seq)-1)))
-    return mw_water_removed
+    total_mw = sum(aa_weight_dict[a] for a in seq)
+    return total_mw - water_mw * (len(seq) - 1)
     
     
 def one_to_three_letter(seq: str) -> str:
