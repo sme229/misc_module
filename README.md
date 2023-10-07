@@ -25,7 +25,7 @@ using _1-letter_ amino acid code and can contain any of the standard 20 amino ac
 
 The following functions are implemented:
 ```
-molecular_weight
+**molecular_weight**
 
 ```
 this function takes 1-letter coded protein sequence(s) (string) and calculates molecular weight rounded to integer in g/mol. The function is not case-sensitive.
