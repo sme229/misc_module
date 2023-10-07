@@ -43,12 +43,20 @@ run_protein_tool('peptide', function='molecular_weight')
 one_to_three_letter
 ```
 this function takes 1-letter coded protein sequence(s) (string) and returns a 3-letter coded sequence(s) without spaces (string).
+
 `
 run_protein_tool('PEPTIDE', function='one_to_three_letter')
+`
+
+`
 'ProGluProThrIleAspGlu'
 `
+
 `
 run_protein_tool('p', 'peptide', function='one_to_three_letter')
+`
+
+`
 ['Pro', 'ProGluProThrIleAspGlu']
 `
 
@@ -57,8 +65,12 @@ amino_acid_frequency
 ```
 this function takes 1-letter coded protein sequence(s) (string), calculates frequency for each unique amino acid and creates a dictionary
 with amino acids as keys and corresponding frequencies as values.
+
 `
 run_protein_tool('MADSEQNQEEAGGGEQREH', function='amino_acid_frequency')
+`
+
+`
 {'M': 5.26,
 'A': 10.53,
 'D': 5.26,
@@ -76,8 +88,12 @@ find_motifs
 ```
 this function takes two string arguments: 1-letter coded protein sequence(s) and a motif of interest, where motif is any sequence which occurence 
 will be searched for in the input protein sequence(s). The function returns position(s) of the motif.
+
 `
 find_motifs('MADSEQNQEEAGGGEQREH', function='find_motifs', motif='GG')
+`
+
+`
 [12, 13]
 `
 
@@ -92,6 +108,9 @@ takes a DNA sequence as input and returns the result of transcription (RNA)
 
 `
 run_dna_rna_tools('aaagggcccttt', function='transcribe')
+`
+
+`
 'aaagggcccuuu'
 `
 
@@ -102,6 +121,9 @@ This function works with either DNA or RNA sequences and returns a complementary
 
 `
 run_dna_rna_tools('aaagggcccttt', 'auggcc', function='complement')
+`
+
+`
 ['tttcccgggaaa', 'uaccgg']
 `
 
@@ -112,6 +134,9 @@ This function returns a reversed sequence
 
 `
 run_dna_rna_tools('aaagggcccttt', 'auggcc', function='reverse')
+`
+
+`
 ['tttcccgggaaa', 'ccggua']
 `
 
@@ -122,6 +147,9 @@ This function returns a reversed complementary sequence
 
 `
 run_dna_rna_tools('aaagggcccttt', 'auggcc', function='reverse_complement')
+`
+
+`
 ['aaagggcccttt', 'ggccau']
 `
 
