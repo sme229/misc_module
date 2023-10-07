@@ -1,7 +1,7 @@
-## misc_module
+## misc_module ##
 
 This module includes tools that can work with fastq, protein and nucleic acid sequences.
-# 1. ```fastq_filter```
+# 1. ```fastq_filter``` #
    The function takes fastq sequences organised as a dictinary for input: {'seq_name': ('sequence', 'quality')}
    
    ```{'@SRX079804:1:SRR292678:1:1101:21885:21885': ('ACAGCAACATAAACATGATGGGATGGCGTAAGCCCCCGAGATATCAGTTTACCCAGGATAAGAGATTAAATTATGAGCAACATTATTAA', 'FGGGFGGGFGGGFGDFGCEBB@CCDFDDFFFFBFFGFGEFDFFFF;D@DD>C@DDGGGDFGDGG?GFGFEGFGGEF@FDGGGFGFBGGD'),
@@ -14,7 +14,7 @@ This function filters fastq sequences by GC content, sequence length and quality
 In this example, the GC content filter is set up as >= 0 and <= 80, the length filter filters out sequences that are outside of >= 100 and <= 200 length and the quality score cut off is set to >= 20. 
 A filtered dictionary with sequences that passed all 3 filters is returned. 
 
-# 2. ```run_protein_tool```
+# 2. ```run_protein_tool``` #
 Includes a set of commands that perform various operations with protein or peptide sequences of any length. The input sequence(s) must be written 
 using _1-letter_ amino acid code and can contain any of the standard 20 amino acids.
 
@@ -59,7 +59,7 @@ find_motifs('MADSEQNQEEAGGGEQREH', function='find_motifs', motif='GG')
 [12, 13]
 ```
 
-# 3. ```run_dna_rna_tools```
+# 3. ```run_dna_rna_tools``` #
 This function takes DNA or RNA sequences as input and includes the following operations:
 
 *```transcribe``` takes a DNA sequence as input and returns the result of transcription (RNA)
