@@ -1,9 +1,15 @@
-def fastq_filter(seqs: dict, gc_bounds: int, length_bounds: int, quality_threshold: int) -> dict:
+import modules.fastq_filter_functions.py
+import modules.nucleic_acid_module.py
+import modules.protein_module.py
+
+
+def fastq_filter(input_path: str, output_filename: str, gc_bounds: int, length_bounds: int, quality_threshold: int) -> list:
     """
-    Filters fastq sequence by gc content, length and quality score
-    Arguments: dict with fastq sequences, filtering parameters
-    Returns filtered dictionary
+    Filters fastq sequences by gc content, length and quality score
+    Arguments: path to fastq file, name for the output file, filtering parameters
+    Returns filtered fastq file in a new directory
     """
+    seqs = fastq_to_dict(input_path)     
     result = dict()
     gc_filtered = gc_filter(seqs, gc_bounds)
     length_filtered = length_filter(seqs, length_bounds)
@@ -13,7 +19,8 @@ def fastq_filter(seqs: dict, gc_bounds: int, length_bounds: int, quality_thresho
     for keys, (sequence, quality) in seqs.items():
         if keys in intersection:
             result[keys] = (sequence, quality)
-    return result
+    output_filename = dict_to_fastq(result, output_filename)
+    return output_filename
 
 
 def run_dna_rna_tools(*args: str, function: str) -> str:
