@@ -104,3 +104,49 @@ def fastq_filter(seqs: dict, gc_bounds: int, length_bounds: int, quality_thresho
     #for keys, (sequence, quality) in intersection:
     #    resulting_sequences[keys] = (sequence, quality)
     return intersection
+
+
+############fastq to dict
+import os
+def file_to_dict_keys(input_path):
+    names = []
+    if os.path.isfile(input_path) == True:
+        with open(input_path) as py_file:
+            lines = py_file.readlines()
+            for line in lines:
+                line.split(' 1:N')
+                line = line.strip('\n')
+                if line.startswith('@S'):
+                    names.append(line)
+            return names
+            
+def file_to_dict_values(input_path):
+    prel_list = []
+    sequences_list = []
+    quality_list =[]
+    values = []
+    if os.path.isfile(input_path) == True:
+        with open(input_path) as py_file:
+            lines = py_file.readlines()
+            for line in lines:
+                line = line.strip('\n')
+                if not (line.startswith('@S') or line.startswith('+S')):
+                    prel_list.append(line)
+                    quality_list = prel_list[1::2]
+                    sequences_list = prel_list[0::2]
+                    values = list(zip(sequences_list, quality_list))
+            return values
+
+                    
+def fastq_to_dict(input_path):
+    output_dict = dict()
+    names = file_to_dict_keys(input_path)
+    values = file_to_dict_values(input_path)    
+    output_dict = dict(zip(names, values))
+    return output_dict
+
+
+
+
+
+
