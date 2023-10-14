@@ -1,7 +1,7 @@
 import modules.fastq_filter_functions.py
 import modules.nucleic_acid_module.py
 import modules.protein_module.py
-
+import os
 
 def fastq_filter(input_path: str, output_filename: str, gc_bounds: int, length_bounds: int, quality_threshold: int) -> list:
     """
