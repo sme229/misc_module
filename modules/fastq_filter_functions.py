@@ -108,7 +108,10 @@ def fastq_filter(seqs: dict, gc_bounds: int, length_bounds: int, quality_thresho
 
 ############fastq to dict
 import os
-def file_to_dict_keys(input_path):
+def file_to_dict_keys(input_path: str) -> list:
+    """
+    Takes sequence names from a fastq file and creates a list
+    """
     names = []
     if os.path.isfile(input_path) == True:
         with open(input_path) as py_file:
@@ -120,7 +123,10 @@ def file_to_dict_keys(input_path):
                     names.append(line)
             return names
             
-def file_to_dict_values(input_path):
+def file_to_dict_values(input_path: str) -> list:
+    """
+    Takes reads and quality sequences and creates a list
+    """
     prel_list = []
     sequences_list = []
     quality_list =[]
@@ -138,7 +144,10 @@ def file_to_dict_values(input_path):
             return values
 
                     
-def fastq_to_dict(input_path):
+def fastq_to_dict(input_path: str) -> dict:
+    """
+    combines the two functions above and creates a dictionary
+    """
     output_dict = dict()
     names = file_to_dict_keys(input_path)
     values = file_to_dict_values(input_path)    
