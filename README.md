@@ -1,4 +1,4 @@
-## misc_module ##
+# misc_module #
 
 This module includes tools that can work with fastq, protein and nucleic acid sequences.
 
