@@ -108,23 +108,18 @@ def run_protein_tool(*args: str, function: str,  motif: Optional[str]=None):
     """
     results = []
     for seq in args:
-            if check_protein_seq(seq) == 'single_letter_prot_seq':
-                if function == 'check_protein_seq':
-                    for seq in args:
-                        results.append(check_protein_seq(seq))
-                elif function == 'molecular_weight':
-                    for seq in args:
-                        results.append(molecular_weight(seq))
-                elif function == 'one_to_three_letter':
-                    for seq in args:
-                        results.append(one_to_three_letter(seq))
-                elif function == 'amino_acid_frequency':
-                    for seq in args:
-                        results.append(amino_acid_frequency(seq))
-                elif function == 'find_motifs':
-                    for seq in args:
-                        results.append(find_motifs(seq, motif))
-            if len(results) == 1:
-                results = results[0]
-            return results
+        check_protein_seq(seq)
+        if function == 'check_protein_seq':
+            results.append(check_protein_seq(seq))
+        if function == 'molecular_weight':
+            results.append(molecular_weight(seq))
+        if function == 'one_to_three_letter':
+            results.append(one_to_three_letter(seq))
+        if function == 'amino_acid_frequency':
+            results.append(amino_acid_frequency(seq))
+        if function == 'find_motifs':
+            results.append(find_motifs(seq, motif))
+    if len(results) == 1:
+        results = results[0]
+    return results
 
