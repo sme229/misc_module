@@ -16,7 +16,7 @@ def calc_gc_content(seq: str) -> float:
     return gc_content
 
 
-def seq_length(seq: str) -> str:
+def seq_length(seq: str) -> int:
     """
     Calculates sequence length
     Argument is string
@@ -25,7 +25,7 @@ def seq_length(seq: str) -> str:
     return len(seq)
 
 
-def quality_score(seq: str) -> int:
+def quality_score(seq: str) -> float:
     """
     Calculates numeric quality score
     Argument is string
