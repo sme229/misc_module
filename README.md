@@ -143,7 +143,7 @@ Example:
 convert_multiline_fasta_to_oneline(input_fasta='example_multiline_fasta.fasta')
 `
 
-Input file example:
+Input file:
 
 ![before](https://github.com/sme229/misc_module/assets/104040609/65e68a7a-a47c-4335-8d10-a88387fa3bdd)
 
