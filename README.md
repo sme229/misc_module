@@ -128,3 +128,31 @@ run_dna_rna_tools('aaagggcccttt', 'auggcc', function='reverse_complement')
 `
 ['aaagggcccttt', 'ggccau']
 `
+
+# bio_file_processor #
+
+This script contains a function that converts multiple line fasta file into a single line fasta. It takes a fasta file and an output file name (optional) as input returning a new fasta file in the current working directory. If the output file name is not specified, a default name 'output_fasta.fasta' will be used.
+
+```
+convert_multiline_fasta_to_oneline
+```
+
+Example:
+
+`
+convert_multiline_fasta_to_oneline(input_fasta='example_multiline_fasta.fasta')
+`
+
+Input file example:
+
+![before](https://github.com/sme229/misc_module/assets/104040609/65e68a7a-a47c-4335-8d10-a88387fa3bdd)
+
+After conversion to a single line:
+
+![after](https://github.com/sme229/misc_module/assets/104040609/c85e4283-295e-4689-a156-5c464cec2164)
+
+
+
+
+
+
