@@ -131,7 +131,7 @@ run_dna_rna_tools('aaagggcccttt', 'auggcc', function='reverse_complement')
 
 # bio_file_processor #
 
-This script contains a function that converts multiple line fasta file into a single line fasta. It takes a fasta file and an output file name (optional) as input returning a new fasta file in the current working directory. If the output file name is not specified, a default name 'output_fasta.fasta' will be used.
+This script contains a function that converts multiple line fasta file into a single line fasta. It takes a fasta file and an output file name (optional) as input returning a new fasta file in the current working directory. If the output file name is not specified, a default name 'output_fasta.fasta' is used.
 
 ```
 convert_multiline_fasta_to_oneline
