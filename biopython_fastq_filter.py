@@ -76,7 +76,7 @@ class NucleicAcidSequence(BiologicalSequence):
         for i in range(len(self.seq)):
             if list_input[i] in self.complement_dict:
                 list_input[i] = self.complement_dict[list_input[i]]
-        return self.__class__("".join(list_input)) 
+        return "".join(list_input)
         
 class DNASequence(NucleicAcidSequence):
     complement_dict = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G', 'a': 't', 't': 'a', 'g': 'c', 'c': 'g'}
