@@ -66,7 +66,6 @@ class BiologicalSequence(ABC, str):
             return seq_type
         
 class NucleicAcidSequence(BiologicalSequence):
-    #complement_dict = None
     def __init__(self, seq):
         super().__init__(seq)
         self.check_nucleic_acid()
@@ -83,7 +82,7 @@ class DNASequence(NucleicAcidSequence):
     complement_dict = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G', 'a': 't', 't': 'a', 'g': 'c', 'c': 'g'}
     def __init__(self, seq):
         super().__init__(seq)
-        self.complement()
+        #self.complement()
     
     def transcribe(self):
         list_input = list(self.seq)
@@ -98,7 +97,7 @@ class RNASequence(NucleicAcidSequence):
     complement_dict = {'A': 'U', 'U': 'A', 'G': 'C', 'C': 'G', 'a': 'u', 'u': 'a', 'g': 'c', 'c': 'g'}
     def __init__(self, seq):
         super().__init__(seq)
-        self.complement()
+        #self.complement()
     
 class AminoAcidSequence(BiologicalSequence):
     def __init__(self, seq):
