@@ -118,3 +118,4 @@ class AminoAcidSequence(BiologicalSequence):
         for letter in freq_dict:
             freq_dict[letter] = round(freq_dict[letter] / len(self.seq) * 100, 2)
         return freq_dict
+
